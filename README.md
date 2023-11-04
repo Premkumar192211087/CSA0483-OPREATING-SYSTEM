@@ -86,3 +86,74 @@ v.Add the waiting_time to total_waiting_time.
 9)Display the average waiting time.
 
 10)End
+
+3.Design CPU scheduling algorithm with c using FCFStechnique
+a.All process are activated time 0
+b.Assume no process in I/O devices
+Algorithm:-
+step1:-Include libraries(header file like stdio.h)
+step2:-Define process structure
+step3:-Input process data
+step4:-calculate waiting time and turnaroundtime
+step5:-calculate average waiting time and turnaroundtime
+step6:-Display process information
+step7:-End of Algorithm
+
+4.ccode for scheduling select waiting process with executiontime to execute next
+Algorithm:-
+step1:-Input given by user wih n number of process
+step2:-sort process based on burst time
+step3:-Initialise variables(current time,completed process)
+step4:-process scheduling
+step5:-display output
+step6:-End of program
+
+5.scheduling program with c select waitingprocess to execute next
+Algorithm:-
+step1:-Input(enter number of process)
+step2:-sort process based on priority(highest to lowest)
+step3:-Initialize variables(currenttime,completedprocess)
+step4:-process scheduling
+step5:-display the output
+step6:-End of program
+
+6.c program to implement preemptive priority scheduling algorithm
+Algorithm:-
+step1:-Input(enter number of process)
+step2:-Initialise variables
+step3:-process scheduling
+step4:-display output
+step5:-End of program
+
+7.cprogram to implement nonpreemptive sjf algorithm
+Algorithm:-
+step1:-Input(Enter number of process)
+step2:-sort the process based on their burst time in ascending order
+step3:-Initialisation step4:-for each process from 1 to n
+step5:-calculate average waiting time
+step6:-calculate average turnaroundtime
+step7:-End of program
+
+8.cprogram to simulate roundrobin scheduling algorithm with c
+Algorithm:-
+step1:-Input(number of processes)
+step2:-Initialise an empty queue to store process
+step3:-while there are processed in queue or any process has remaining bursttime
+step4:-End of program
+
+11.c program for multithreading Algoritm:-
+step1:-Include necessary header file
+step2:-Define the threadfunction
+step3:-create threads
+step4:-join threads
+step5:-compile and run program
+step6:-End of program
+
+12.cprogram for Dining Philosophers problem
+Algorithm:-
+step1:-Initialization
+step2:-philospher behaviour
+step3:-Handling forks
+step4:-synchronization
+step5:-Implementation using loop
+step6:-End of program

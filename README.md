@@ -184,3 +184,215 @@ step3:-Enter directoryname and parent directory\
 step4:-perform operation(create directory,create file,delete file,listfile,exit)\
 step5:-Initialize filesystem\
 step6:-End of program
+
+#16->IMPLEMENTING RANDOM ACCESS FILES FOR PROCESSING EMPLOYEE DETAILS:-
+
+ALGORITHM STEPS:-
+
+Open or Create File:
+
+Try to open the file in read and write mode (r+).
+
+If the file does not exist, create a new one in read and write mode (w+).
+
+Menu Loop:
+
+Display a menu with options:
+
+-Add Employee
+
+-Display Employees
+
+-Update Employee
+
+-Delete Employee
+
+-Exit
+
+User Input:
+
+-Take the user's choice as input.
+
+Switch on User's Choice:
+
+-For each option, perform the following:
+
+-Add Employee (Option 1):
+
+-Take input for Employee ID, Name, and Salary.
+
+-Use fseek to move to the position corresponding to the given Employee ID.
+
+-Write the employee data using fwrite.
+
+-Display Employees (Option 2):
+
+-Use rewind to move the file position indicator to the beginning.
+
+-Read and display each employee's details using fread.
+
+Update Employee (Option 3):
+
+-Take input for the Employee ID to update.
+
+-Use fseek to move to the position corresponding to the given Employee ID.
+
+-Read the existing employee data using fread.
+
+-Take input for the new Name and Salary.
+
+-Use fseek again to move to the position corresponding to the given Employee ID.
+
+-Write the updated employee data using fwrite.
+
+Delete Employee (Option 4):
+
+-Take input for the Employee ID to delete.
+
+-Use fseek to move to the position corresponding to the given Employee ID.
+
+-Read the existing employee data using fread.
+
+-Clear the record by setting the Employee ID to 0.
+
+-Use fseek again to move to the position corresponding to the given Employee ID. Write the cleared employee data using fwrite.
+
+-Exit (Option 0):
+
+Display an exit message and break out of the loop.
+
+Invalid Choice:
+
+-Display a message for an invalid choice.
+
+Close File:
+
+-Close the file using fclose.
+
+#18-> SIMULATING PRODUCER-CONSUMER PROBLEM USING SEMAPHORES:-
+
+ALGORITHM STEPS:-
+
+Initialize Semaphores and Mutex:
+
+-Initialize semaphores empty and full to the buffer size and 0, respectively.
+
+-Initialize a mutex for mutual exclusion.
+
+2)Initialize Shared Buffer and Indices:
+
+-Initialize the shared buffer and set producer (in) and consumer (out) indices to 0.
+
+Producer Function:
+
+-In the producer thread function:
+
+-Generate a random item.
+
+-Wait for an empty slot in the buffer (sem_wait(&empty)).
+
+-Acquire the mutex for mutual exclusion (pthread_mutex_lock(&mutex)).
+
+-Insert the item into the buffer.
+
+-Update the producer index (in).
+
+-Print a message indicating the produced item.
+
+-Release the mutex (pthread_mutex_unlock(&mutex)).
+
+-Signal that a slot in the buffer is now full (sem_post(&full)).
+
+-Sleep to simulate variable production time.
+
+Consumer Function:
+
+In the consumer thread function:
+
+-Wait for a filled slot in the buffer (sem_wait(&full)).
+
+-Acquire the mutex for mutual exclusion (pthread_mutex_lock(&mutex)).
+
+-Remove the item from the buffer.
+
+-Update the consumer index (out).
+
+-Print a message indicating the consumed item.
+
+-Release the mutex (pthread_mutex_unlock(&mutex)).
+
+-Signal that a slot in the buffer is now empty (sem_post(&empty)).
+
+-Sleep to simulate variable consumption time.
+
+Main Function:
+
+-Initialize threads for the producer and consumer functions.
+
+-Join the threads (this will never be reached in this simple example).
+
+Clean Up:
+
+-Destroy semaphores and mutex.
+
+#21-> IMPLEMENTING WORST FIT ALGORITHM OF MEMORY MANAGEMENT:-
+
+ALGORITHM STEPS:-
+
+Initialization
+
+Define a Free Block Structure:
+
+-Create a structure to represent free memory blocks. This structure should have fields such as start (starting address of the block), size (size of the block), and a pointer to the next free block.
+
+Initialize Free Memory List:
+
+-Create a pointer to the head of the free memory list.
+
+-Initialize it with a single free block representing the entire available memory.
+
+Allocation Function
+
+-Define Allocation Function:
+
+-Create a function to allocate memory using the worst fit algorithm.
+
+-Traverse the free memory list to find the largest available block that can accommodate the process.
+
+-If a suitable block is found, allocate memory and update the free memory list.
+
+Allocate Memory:
+
+-In the allocation function:
+
+-Traverse the free memory list.
+
+-Keep track of the worst fit (largest block).
+
+-If a suitable block is found, allocate memory:
+
+-Update the free memory list.
+
+-Print allocation information.
+
+Deallocation Function
+
+-Define Deallocation Function:
+
+-Create a function to deallocate memory.
+
+-Create a new free block and add it to the free memory list.
+
+-Print deallocation information.
+
+Main Program
+
+Main Function:
+
+-In the main program:
+
+-Initialize free memory.
+
+-Allocate memory for processes.
+
+-Deallocate memory.
